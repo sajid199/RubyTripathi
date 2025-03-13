@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruby Tripathi - Resume</title>
+  <style>
+    :root {
+      --primary-color: #7b1fa2;
+      --secondary-color: #9c27b0;
+      --light-color: #e1bee7;
+      --dark-color: #4a148c;
+      --text-color: #333;
+      --light-text: #fff;
+      --section-padding: 25px;
+      --border-radius: 5px;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f5f5f5;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--light-text);
+      padding: 8px 16px;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .btn:hover {
+      background-color: var(--dark-color);
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+      color: var(--light-text);
+      padding: 40px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid var(--light-color);
+      overflow: hidden; /* Ensure the image is clipped to the circle */
+    }
+    
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure the image covers the circle without distortion */
+    }
+    
+    .profile-info h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .profile-info p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    /* Main Content */
+    main {
+      padding: 40px 0;
+    }
+    
+    .section {
+      background-color: white;
+      margin-bottom: 30px;
+      padding: var(--section-padding);
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+    
+    .section-title h2 {
+      font-size: 1.5rem;
+    }
+    
+    .section-title i {
+      transition: transform 0.3s ease;
+    }
+    
+    .section-content {
+      transition: max-height 0.3s ease;
+      overflow: hidden;
+      max-height: 1000px;
+    }
+    
+    .collapsed .section-content {
+      max-height: 0;
+    }
+    
+    .collapsed .section-title i {
+      transform: rotate(-90deg);
+    }
+    
+    /* Objective Section */
+    .objective-text {
+      font-size: 1.1rem;
+      text-align: center;
+      font-style: italic;
+    }
+    
+    /* Education Section */
+    .education-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    
+    .education-table th, .education-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    
+    .education-table th {
+      background-color: var(--light-color);
+      color: var(--dark-color);
+    }
+    
+    .education-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    .education-table tr:hover {
+      background-color: #f1f1f1;
+    }
+    
+    /* Skills Section */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .skill-item {
+      background-color: var(--light-color);
+      padding: 8px 15px;
+      border-radius: 20px;
+      color: var(--dark-color);
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+    
+    .skill-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Competencies Section */
+    .competencies-list {
+      list-style-type: none;
+      margin-left: 20px;
+    }
+    
+    .competencies-list li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .competencies-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+    
+    /* Achievements Section */
+    .achievements-list {
+      list-style-type: none;
+      margin-left: 20px;
+    }
+    
+    .achievements-list li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .achievements-list li:before {
+      content: "★";
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--dark-color);
+      color: var(--light-text);
+      margin-top: 30px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .education-table {
+        font-size: 0.9rem;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .section {
+        padding: 15px;
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      .btn, .section-title i {
+        display: none;
+      }
+      
+      .collapsed .section-content {
+        max-height: none;
+      }
+      
+      body {
+        background-color: white;
+      }
+      
+      .section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="profile-container">
+        <div class="profile-pic">
+          <img src="assets/img/about.jpg" alt="Ruby Tripathi">
+        </div>
+        <div class="profile-info">
+          <h1>Ruby Tripathi</h1>
+          <p>Botany Post Graduate | Science Educator</p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i>📱</i>
+              <span>+91-9918108225</span>
+            </div>
+            <div class="contact-item">
+              <i>✉️</i>
+              <span>rubytripathi108@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <i>📍</i>
+              <span>Badlapur, Thane - 421503</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <main class="container">
+    <section class="section" id="objective">
+      <div class="section-title" onclick="toggleSection('objective')">
+        <i>▼</i>
+        <h2>Career Objective</h2>
+      </div>
+      <div class="section-content">
+        <p class="objective-text">
+          To work with an organization that offers challenges, responsibilities and decision-making opportunities, where I can blend my functional and technical knowledge gained from experience for continuous growth and better career prospects.
+        </p>
+      </div>
+    </section>
+    
+    <section class="section" id="education">
+      <div class="section-title" onclick="toggleSection('education')">
+        <i>▼</i>
+        <h2>Educational Qualifications</h2>
+      </div>
+      <div class="section-content">
+        <table class="education-table">
+          <thead>
+            <tr>
+              <th>Exam</th>
+              <th>Year</th>
+              <th>College & Board</th>
+              <th>Main Subjects</th>
+              <th>Marks%</th>
+              <th>Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PG</td>
+              <td>2018</td>
+              <td>Mahatma Gandhi Kashi Vidyapith Varanasi (U.P)</td>
+              <td>BOTANY</td>
+              <td>55%</td>
+              <td>Second Division</td>
+            </tr>
+            <tr>
+              <td>Graduation</td>
+              <td>2016</td>
+              <td>Mahatma Gandhi Kashi Vidyapith Varanasi (U.P)</td>
+              <td>ZOOLOGY, CHEMISTRY, BOTANY</td>
+              <td>60%</td>
+              <td>First Division</td>
+            </tr>
+            <tr>
+              <td>Intermediate</td>
+              <td>2011</td>
+              <td>PDD Upadhyay Inter College (U.P Board)</td>
+              <td>SCIENCE(PCB)</td>
+              <td>62%</td>
+              <td>First Division</td>
+            </tr>
+            <tr>
+              <td>High School</td>
+              <td>2009</td>
+              <td>PDD Upadhyay Inter College (U.P Board)</td>
+              <td>-</td>
+              <td>55%</td>
+              <td>Second Division</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section class="section" id="skills">
+      <div class="section-title" onclick="toggleSection('skills')">
+        <i>▼</i>
+        <h2>Professional Skills</h2>
+      </div>
+      <div class="section-content">
+        <div class="skills-list">
+          <span class="skill-item">B.Ed Graduate</span>
+          <span class="skill-item">Microsoft Office</span>
+          <span class="skill-item">Communication Skills</span>
+          <span class="skill-item">Presentation Skills</span>
+          <span class="skill-item">Typing</span>
+          <span class="skill-item">Bio Technology</span>
+          <span class="skill-item">Home Tuition</span>
+          <span class="skill-item">Science Education</span>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section" id="competencies">
+      <div class="section-title" onclick="toggleSection('competencies')">
+        <i>▼</i>
+        <h2>Behavioral Competencies</h2>
+      </div>
+      <div class="section-content">
+        <ul class="competencies-list">
+          <li>Possess good communication & interpersonal skills.</li>
+          <li>Have good grasping power to learn new things easily and effectively.</li>
+          <li>Socially adjustable and a good team player.</li>
+          <li>Well organized and possess good group dynamics.</li>
+          <li>Open to meet challenges.</li>
+        </ul>
+      </div>
+    </section>
+    
+    <section class="section" id="achievements">
+      <div class="section-title" onclick="toggleSection('achievements')">
+        <i>▼</i>
+        <h2>Additional Information & Achievements</h2>
+      </div>
+      <div class="section-content">
+        <ul class="achievements-list">
+          <li>Completed parlor training with certification.</li>
+          <li>Participated as an Anchor in welcome program for freshers.</li>
+          <li>Completed two years B.Ed course from Gyanodaya Vidhyamandir (Thane).</li>
+          <li>Certification in Bio Technology.</li>
+        </ul>
+      </div>
+    </section>
+    
+    <section class="section" id="strengths">
+      <div class="section-title" onclick="toggleSection('strengths')">
+        <i>▼</i>
+        <h2>Strengths & Hobbies</h2>
+      </div>
+      <div class="section-content">
+        <ul class="competencies-list">
+          <li>Confidence & Positive Attitude</li>
+          <li>Dancing</li>
+          <li>Listening to Music</li>
+        </ul>
+      </div>
+    </section>
+    
+    <section class="section" id="languages">
+      <div class="section-title" onclick="toggleSection('languages')">
+        <i>▼</i>
+        <h2>Languages</h2>
+      </div>
+      <div class="section-content">
+        <div class="skills-list">
+          <span class="skill-item">English</span>
+          <span class="skill-item">Hindi</span>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section" id="declaration">
+      <div class="section-title" onclick="toggleSection('declaration')">
+        <i>▼</i>
+        <h2>Declaration</h2>
+      </div>
+      <div class="section-content">
+        <p class="objective-text">
+          I hereby declare that the above information is true and correct to the best of my knowledge and belief.
+        </p>
+        <div>
+        <p style="float: right;" class="section-title">Ruby Tripathi</p>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+          Download Resume
+        </div>
+
+
