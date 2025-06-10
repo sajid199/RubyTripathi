@@ -12,8 +12,8 @@
       --dark-color: #1a252f;
       --text-color: #2c3e50;
       --light-text: #fff;
-      --section-padding: 20px;
-      --border-radius: 8px;
+      --section-padding: 15px;
+      --border-radius: 6px;
     }
 
     * {
@@ -27,27 +27,29 @@
       background-color: #f7f9fb;
       color: var(--text-color);
       line-height: 1.5;
-      font-size: 16px;
+      font-size: 14px;
     }
 
     .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 15px;
+      max-width: 100%;
+      margin: 10px auto;
+      padding: 0 10px;
     }
 
     .btn {
       display: inline-block;
       background-color: var(--primary-color);
       color: var(--light-text);
-      padding: 10px 20px;
+      padding: 8px 16px;
       border: none;
       border-radius: var(--border-radius);
       cursor: pointer;
       transition: background-color 0.3s ease;
       text-decoration: none;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 12px;
+      width: 100%;
+      text-align: center;
     }
 
     .btn:hover {
@@ -58,7 +60,7 @@
     header {
       background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
       color: var(--light-text);
-      padding: 30px 0;
+      padding: 20px 0;
       text-align: center;
       border-radius: var(--border-radius);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -68,14 +70,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
+      gap: 10px;
     }
 
     .profile-pic {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      border: 4px solid var(--light-color);
+      border: 3px solid var(--light-color);
       overflow: hidden;
     }
 
@@ -86,23 +88,23 @@
     }
 
     .profile-info h1 {
-      font-size: 2rem;
-      margin-bottom: 8px;
+      font-size: 1.8rem;
+      margin-bottom: 6px;
       font-weight: 700;
     }
 
     .profile-info p {
-      font-size: 1rem;
-      margin-bottom: 12px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
       font-weight: 400;
     }
 
     .contact-info {
       display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      font-size: 0.9rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
     }
 
     .contact-item {
@@ -111,14 +113,19 @@
       gap: 5px;
     }
 
+    .contact-item a {
+      color: var(--light-text);
+      text-decoration: none;
+    }
+
     /* Main Content */
     main {
-      padding: 20px 0;
+      padding: 15px 0;
     }
 
     .section {
       background-color: white;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       padding: var(--section-padding);
       border-radius: var(--border-radius);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -128,11 +135,11 @@
     .section-title {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 15px;
+      gap: 6px;
+      margin-bottom: 12px;
       color: var(--primary-color);
       cursor: pointer;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 600;
     }
 
@@ -156,9 +163,8 @@
 
     /* Objective Section */
     .objective-text {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       text-align: left;
-      font-style: normal;
       color: var(--text-color);
     }
 
@@ -166,13 +172,13 @@
     .education-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 10px;
-      font-size: 0.9rem;
+      margin-top: 8px;
+      font-size: 0.85rem;
     }
 
     .education-table th, .education-table td {
       border: 1px solid #e0e0e0;
-      padding: 10px;
+      padding: 8px;
       text-align: left;
     }
 
@@ -193,19 +199,19 @@
     /* Skills Section */
     .skills-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 8px;
-      margin-top: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 6px;
+      margin-top: 8px;
     }
 
     .skill-item {
       background-color: var(--light-color);
-      padding: 8px 12px;
-      border-radius: 20px;
+      padding: 6px 10px;
+      border-radius: 15px;
       color: var(--dark-color);
       font-weight: 500;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
 
     .skill-item:hover {
@@ -213,17 +219,17 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    /* Competencies Section */
-    .competencies-list {
+    /* Competencies and Achievements Sections */
+    .competencies-list, .achievements-list {
       list-style-type: none;
-      margin-left: 15px;
-      font-size: 0.9rem;
+      margin-left: 10px;
+      font-size: 0.85rem;
     }
 
-    .competencies-list li {
-      margin-bottom: 8px;
+    .competencies-list li, .achievements-list li {
+      margin-bottom: 6px;
       position: relative;
-      padding-left: 20px;
+      padding-left: 18px;
     }
 
     .competencies-list li:before {
@@ -232,19 +238,6 @@
       left: 0;
       color: var(--primary-color);
       font-weight: bold;
-    }
-
-    /* Achievements Section */
-    .achievements-list {
-      list-style-type: none;
-      margin-left: 15px;
-      font-size: 0.9rem;
-    }
-
-    .achievements-list li {
-      margin-bottom: 8px;
-      position: relative;
-      padding-left: 20px;
     }
 
     .achievements-list li:before {
@@ -257,39 +250,79 @@
     /* Footer */
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 10px;
       background-color: var(--dark-color);
       color: var(--light-text);
       border-radius: var(--border-radius);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
 
-    /* Responsive */
+    /* Mobile-Specific Styles */
     @media (max-width: 768px) {
+      body {
+        font-size: 12px;
+      }
+
       .container {
-        padding: 0 10px;
-      }
-
-      .education-table {
-        font-size: 0.8rem;
-      }
-
-      .contact-info {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .section {
-        padding: 15px;
+        padding: 0 8px;
       }
 
       .profile-info h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
 
       .profile-info p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+      }
+
+      .profile-pic {
+        width: 80px;
+        height: 80px;
+        border-width: 2px;
+      }
+
+      .contact-info {
+        gap: 6px;
+        font-size: 0.75rem;
+      }
+
+      .section {
+        padding: 10px;
+      }
+
+      .section-title {
+        font-size: 1rem;
+      }
+
+      .education-table {
+        font-size: 0.75rem;
+      }
+
+      .education-table th, .education-table td {
+        padding: 6px;
+      }
+
+      .skills-list {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 5px;
+      }
+
+      .skill-item {
+        font-size: 0.7rem;
+        padding: 5px 8px;
+      }
+
+      .competencies-list, .achievements-list {
+        font-size: 0.75rem;
+      }
+
+      .objective-text {
+        font-size: 0.8rem;
+      }
+
+      .btn {
+        padding: 8px;
+        font-size: 11px;
       }
     }
 
@@ -415,7 +448,7 @@
             </div>
             <div class="contact-item">
               <i>🔗</i>
-              <span><a href="https://linkedin.com/in/rubytripathi" style="color: var(--light-text); text-decoration: none;">linkedin.com/in/rubytripathi</a></span>
+              <span><a href="https://linkedin.com/in/rubytripathi">linkedin.com/in/rubytripathi</a></span>
             </div>
           </div>
         </div>
@@ -494,131 +527,130 @@
               <td>55%</td>
               <td>Second Division</td>
             </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="section-title" onclick="toggleSection('experience')">
-        <i>▼</i>
-        <h2>Professional Experience</h2>
-      </div>
-      <diviconda install -c conda-forge pygame
-      <div class="section-content">
-        <ul class="achievements-list">
-          <li><strong>Private Science Tutor</strong>, Badlapur, Thane (2018-Present)<br>Designed and delivered personalized lesson plans in Biology and Chemistry for high school students, improving student performance by an average of 15% in board examinations.</li>
-          <li><strong>Science Workshop Facilitator</strong>, Local Community Centers, Varanasi (2017-2018)<br>Conducted interactive workshops on plant biology and environmental science, engaging over 100 students and fostering interest in STEM fields.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="section-title" onclick="toggleSection('skills')">
-        <i>▼</i>
-        <h2>Professional Skills</h2>
-      </div>
-      <div class="section-content">
-        <div class="skills-list">
-          <span class="skill-item">Science Education</span>
-          <span class="skill-item">Curriculum Development</span>
-          <span class="skill-item">Microsoft Office Suite</span>
-          <span class="skill-item">Effective Communication</span>
-          <span class="skill-item">Presentation Skills</span>
-          <span class="skill-item">Biotechnology</span>
-          <span class="skill-item">Classroom Management</span>
-          <span class="skill-item">Digital Teaching Tools</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="competencies">
-      <div class="section-title" onclick="toggleSection('competencies')">
-        <i>▼</i>
-        <h2>Core Competencies</h2>
-      </div>
-      <div class="section-content">
-        <ul class="competencies-list">
-          <li>Strong interpersonal and communication skills, fostering positive student relationships.</li>
-          <li>Quick learner with adaptability to new educational methodologies and technologies.</li>
-          <li>Collaborative team player with proven group facilitation skills.</li>
-          <li>Organized and detail-oriented in lesson planning and student assessment.</li>
-          <li>Resilient and open to embracing challenges in dynamic educational environments.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="achievements">
-      <div class="section-title" onclick="toggleSection('achievements')">
-        <i>▼</i>
-        <h2>Certifications & Achievements</h2>
-      </div>
-      <div class="section-content">
-        <ul class="achievements-list">
-          <li>Certified in Biotechnology, Mahatma Gandhi Kashi Vidyapith, 2018.</li>
-          <li>Completed Professional Parlor Training with Certification, 2019.</li>
-          <li>Anchored Welcome Program for Freshers, Gyanodaya Vidhyamandir, 2023.</li>
-          <li>Developed Science Teaching Module adopted by local tutoring center, 2020.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="strengths">
-      <div class="section-title" onclick="toggleSection('strengths')">
-        <i>▼</i>
-        <h2>Strengths & Interests</h2>
-      </div>
-      <div class="section-content">
-        <ul class="competencies-list">
-          <li>Confident and proactive approach to teaching and problem-solving.</li>
-          <li>Passionate about dance as a creative outlet.</li>
-          <li>Enjoys listening to music for inspiration and relaxation.</li>
-          <li>Committed to continuous professional development in education.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="languages">
-      <div class="section-title" onclick="toggleSection('languages')">
-        <i>▼</i>
-        <h2>Languages</h2>
-      </div>
-      <div class="section-content">
-        <div class="skills-list">
-          <span class="skill-item">English (Fluent)</span>
-          <span class="skill-item">Hindi (Native)</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="declaration">
-      <div class="section-title" onclick="toggleSection('declaration')">
-        <i>▼</i>
-        <h2>Declaration</h2>
-      </div>
-      <div class="section-content">
-        <p class="objective-text">
-          I hereby declare that all information provided in this resume is true and accurate to the best of my knowledge.
-        </p>
-        <p style="text-align: right; margin-top: 20px; font-weight: 600;">Ruby Tripathi</p>
-        <div style="text-align: center; margin-top: 20px;">
-          <button class="btn" onclick="window.print()">Download Resume</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Ruby Tripathi. All rights reserved.</p>
+        </tbody>
+      </table>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    function toggleSection(sectionId) {
-      const section = document.getElementById(sectionId);
-      section.classList.toggle('collapsed');
-    }
-  </script>
+  <section class="section" id="experience">
+    <div class="section-title" onclick="toggleSection('experience')">
+      <i>▼</i>
+      <h2>Professional Experience</h2>
+    </div>
+    <div class="section-content">
+      <ul class="achievements-list">
+        <li><strong>Private Science Tutor</strong>, Badlapur, Thane (2018-Present)<br>Designed and delivered personalized lesson plans in Biology and Chemistry for high school students, improving student performance by an average of 15% in board examinations.</li>
+        <li><strong>Science Workshop Facilitator</strong>, Local Community Centers, Varanasi (2017-2018)<br>Conducted interactive workshops on plant biology and environmental science, engaging over 100 students and fostering interest in STEM fields.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="section-title" onclick="toggleSection('skills')">
+      <i>▼</i>
+      <h2>Professional Skills</h2>
+    </div>
+    <div class="section-content">
+      <div class="skills-list">
+        <span class="skill-item">Science Education</span>
+        <span class="skill-item">Curriculum Development</span>
+        <span class="skill-item">Microsoft Office Suite</span>
+        <span class="skill-item">Effective Communication</span>
+        <span class="skill-item">Presentation Skills</span>
+        <span class="skill-item">Biotechnology</span>
+        <span class="skill-item">Classroom Management</span>
+        <span class="skill-item">Digital Teaching Tools</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="competencies">
+    <div class="section-title" onclick="toggleSection('competencies')">
+      <i>▼</i>
+      <h2>Core Competencies</h2>
+    </div>
+    <div class="section-content">
+      <ul class="competencies-list">
+        <li>Strong interpersonal and communication skills, fostering positive student relationships.</li>
+        <li>Quick learner with adaptability to new educational methodologies and technologies.</li>
+        <li>Collaborative team player with proven group facilitation skills.</li>
+        <li>Organized and detail-oriented in lesson planning and student assessment.</li>
+        <li>Resilient and open to embracing challenges in dynamic educational environments.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="achievements">
+    <div class="section-title" onclick="toggleSection('achievements')">
+      <i>▼</i>
+      <h2>Certifications & Achievements</h2>
+    </div>
+    <div class="section-content">
+      <ul class="achievements-list">
+        <li>Certified in Biotechnology, Mahatma Gandhi Kashi Vidyapith, 2018.</li>
+        <li>Completed Professional Parlor Training with Certification, 2019.</li>
+        <li>Anchored Welcome Program for Freshers, Gyanodaya Vidhyamandir, 2023.</li>
+        <li>Developed Science Teaching Module adopted by local tutoring center, 2020.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="strengths">
+    <div class="section-title" onclick="toggleSection('strengths')">
+      <i>▼</i>
+      <h2>Strengths & Interests</h2>
+    </div>
+    <div class="section-content">
+      <ul class="competencies-list">
+        <li>Confident and proactive approach to teaching and problem-solving.</li>
+        <li>Passionate about dance as a creative outlet.</li>
+        <li>Enjoys listening to music for inspiration and relaxation.</li>
+        <li>Committed to continuous professional development in education.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="languages">
+    <div class="section-title" onclick="toggleSection('languages')">
+      <i>▼</i>
+      <h2>Languages</h2>
+    </div>
+    <div class="section-content">
+      <div class="skills-list">
+        <span class="skill-item">English (Fluent)</span>
+        <span class="skill-item">Hindi (Native)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="declaration">
+    <div class="section-title" onclick="toggleSection('declaration')">
+      <i>▼</i>
+      <h2>Declaration</h2>
+    </div>
+    <div class="section-content">
+      <p class="objective-text">
+        I hereby declare that all information provided in this resume is true and accurate to the best of my knowledge.
+      </p>
+      <p style="text-align: right; margin-top: 15px; font-weight: 600;">Ruby Tripathi</p>
+      <div style="text-align: center; margin-top: 15px;">
+        <button class="btn" onclick="window.print()">Download Resume</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Ruby Tripathi. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.classList.toggle('collapsed');
+  }
+</script>
 </body>
 </html>
